@@ -122,6 +122,18 @@ class Game:
         if player_hand.get_value() > 21:
             print("You busted! Dealer wins.")
             return True
+        elif dealer_hand.get_value() > 21:
+            print("Dealer busted! You win.")
+            return True
+        elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
+            print("Both have blackjack! It's a tie.")
+            return True
+        elif player_hand.is_blackjack():
+            print("You have blackjack! You win.")
+            return True
+        elif dealer_hand.is_blackjack():
+            print("Dealer has blackjack! Dealer wins.")
+            return True
         return False  
     
     
