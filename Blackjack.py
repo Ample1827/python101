@@ -37,7 +37,7 @@ class Deck:
 
     def deal(self, number):
         cards_dealt = []
-        for x in range(number):
+        for _ in range(number):
             if len(self.cards) > 0:
                 card = self.cards.pop()
                 cards_dealt.append(card)
@@ -94,7 +94,7 @@ class Game:
         
         while games_to_play <= 0:
             try:
-                game_to_play = int(input("How many games do you want to play? "))
+                games_to_play = int(input("How many games do you want to play? "))
             except:
                 print("Invalid input. Please enter a number.")
             
@@ -107,7 +107,7 @@ class Game:
             player_hand = Hand()
             dealer_hand = Hand(dealer=True)
             
-            for i in range(2):
+            for _ in range(2):
                 player_hand.add_card(deck.deal(1))
                 dealer_hand.add_card(deck.deal(1))
                 
@@ -135,7 +135,6 @@ class Game:
             if self.check_winner(player_hand, dealer_hand):
                 continue
             
-            player_hand_value = player_hand.get_value()
             dealer_hand_value = dealer_hand.get_value()
             
             while dealer_hand_value < 17:
@@ -153,7 +152,7 @@ class Game:
             
             self.check_winner(player_hand, dealer_hand, True)
             
-    print("\nGame Over! Thanks for playing!")
+        print("\nGame Over! Thanks for playing!")
             
     def check_winner(self, player_hand, dealer_hand, game_over=False):
         if not game_over:   
