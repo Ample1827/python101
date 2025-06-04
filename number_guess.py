@@ -25,7 +25,7 @@ class Game:
                 else:
                     print("Too high! Try again.")
             except ValueError:
-                print("Please enter a valid integer.")
+                print("Please enter a valid Number.")
 
 g = Game()
 g.play()
