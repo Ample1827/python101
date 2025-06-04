@@ -24,7 +24,7 @@ class Game:
     def play(self):
         while True:
             try:
-                play = input("Roll the dice? (yes/no): ")
+                play = input("Roll the dice? (yes/no): ").lower()
                 if play in ["yes", "y"]:
                     result = dice.roll()
                     print(f"You rolled: {result}")
