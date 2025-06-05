@@ -1,16 +1,11 @@
 import random
 
-class NumberGuess:
-    def __init__(self):
-        self.number_to_guess = random.randint(1, 100)
-
-
 class Game:
     def __init__(self):
-        self.number_guess = NumberGuess()
-
+        self.number_to_guess = random.randint(1, 100)
+       
     def play(self):
-        n = self.number_guess.number_to_guess
+        n = self.number_to_guess
         while True:
             try:
                 guess = int(input("Guess a number between 1 and 100: "))
