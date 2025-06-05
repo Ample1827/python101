@@ -5,14 +5,13 @@ class Game:
         self.number_to_guess = random.randint(1, 100)
        
     def play(self):
-        n = self.number_to_guess
         while True:
             try:
                 guess = int(input("Guess a number between 1 and 100: "))
-                if guess == n:
+                if guess == self.number_to_guess:
                     print("Congratulations! You've guessed the number!")
                     break
-                elif guess < n:
+                elif guess < self.number_to_guess:
                     print("Too low! Try again.")
                 else:
                     print("Too high! Try again.")
@@ -21,3 +20,4 @@ class Game:
 
 g = Game()
 g.play()
+
